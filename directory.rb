@@ -1,3 +1,5 @@
+student_count = 8
+
 # we print the list of names
 puts "The students of Christmas Academy"
 puts "--------------------"
@@ -10,7 +12,4 @@ puts "Donner"
 puts "Blitzen"
 puts "Buddy the elf"
 # then we print the total students
-print "Overall we have "
-print 8
-# we use print here so there are no line breaks
-puts " great students."
+puts "Overall we have #{student_count} great students."
