@@ -8,3 +8,6 @@ puts "Prancer"
 puts "Donner"
 puts "Blitzen"
 puts "Buddy the elf"
+print "Overall we have "
+print 8
+puts " great students."
