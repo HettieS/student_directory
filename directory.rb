@@ -1,15 +1,21 @@
-student_count = 8
+students = [
+    "Santa Klaus", 
+    "Mrs Klaus",
+    "Rudolf",
+    "Dancer",
+    "Prancer",
+    "Donner",
+    "Blitzen",
+    "Buddy the elf"
+]
 
 # we print the list of names
 puts "The students of Christmas Academy"
 puts "--------------------"
-puts "Santa Klaus"
-puts "Mrs Klaus"
-puts "Rudolf"
-puts "Dancer"
-puts "Prancer"
-puts "Donner"
-puts "Blitzen"
-puts "Buddy the elf"
+
+students.each do |student|
+    puts student
+end
+
 # then we print the total students
-puts "Overall we have #{student_count} great students."
+puts "Overall we have #{students.count} great students."
