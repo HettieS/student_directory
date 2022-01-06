@@ -1,12 +1,12 @@
 students = [
-    "Santa Klaus", 
-    "Mrs Klaus",
-    "Rudolf",
-    "Dancer",
-    "Prancer",
-    "Donner",
-    "Blitzen",
-    "Buddy the elf"
+    {name: "Santa Klaus", cohort: :november}, 
+    {name: "Mrs Klaus", cohort: :november},    
+    {name: "Rudolf", cohort: :november},    
+    {name: "Dancer", cohort: :november},    
+    {name: "Prancer", cohort: :november},    
+    {name: "Donner", cohort: :november},    
+    {name: "Blitzen", cohort: :november},    
+    {name: "Buddy the elf", cohort: :november}
 ]
 
 def print_header
@@ -14,14 +14,14 @@ def print_header
     puts "--------------------"
 end
 
-def print(names)
-    names.each do |name|
-        puts name
+def print(students)
+    students.each do |student|
+        puts "#{student[:name]} (#{student[:cohort]} cohort)"
     end
 end
 
-def print_footer(names)
-    puts "Overall we have #{names.count} great students."
+def print_footer(students)
+    puts "Overall we have #{students.count} great students."
 end
 
 print_header
