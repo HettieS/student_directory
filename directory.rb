@@ -20,6 +20,25 @@ def print(students)
     end
 end
 
+def print_names_beginning_b(students)
+    students.each.with_index(1) do |(student), index|
+        if student[:name].start_with?("B")
+        puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
+        end
+    end
+end
+
+def print_names_less_than_12_characters(students)
+    students.each.with_index(1) do |(student), index|
+        if student[:name].length<12
+        puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
+        end
+    end
+end
+
+# puts "Hash a select form : #{a.select {|key, value| key < "b"}}\n\n"
+# array.select { |word| word.start_with?('b') }
+
 def print_footer(students)
     puts "Overall we have #{students.count} great students."
 end
@@ -39,5 +58,5 @@ end
 
 students = input_students
 print_header
-print(students)
+print_names_less_than_12_characters(students)
 print_footer(students)
