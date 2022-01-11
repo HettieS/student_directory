@@ -16,7 +16,7 @@ end
 
 def print(students)
     students.each.with_index(1) do |(student), index|
-        puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
+        puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort), likes #{student[:hobbies]}."
     end
 end
 
@@ -36,8 +36,12 @@ def print_names_less_than_12_characters(students)
     end
 end
 
-# puts "Hash a select form : #{a.select {|key, value| key < "b"}}\n\n"
-# array.select { |word| word.start_with?('b') }
+# iterating through the hash using while
+# def print_names_less_than_12_characters(students)
+#     while student[:name].length < 12
+#         puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
+#     end
+# end
 
 def print_footer(students)
     puts "Overall we have #{students.count} great students."
@@ -56,7 +60,21 @@ def input_students
     students
 end
 
+# def add_hobbies(students)
+#     attempt two
+#     students << {hobbies: "tennis"}
+    # attempt one
+    # students.each do |(student), index|
+    #     # student.store("hobbies", "tennis")
+    #     students("hobbies") = "tennis"
+    # end
+#     students.each do |student|
+#         print "#{student[:hobbies]}"
+#     end
+# end
+
 students = input_students
+# add_hobbies(students)
 print_header
-print_names_less_than_12_characters(students)
+print(students)
 print_footer(students)
