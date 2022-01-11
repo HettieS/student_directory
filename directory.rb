@@ -36,12 +36,13 @@ def print_names_less_than_12_characters(students)
     end
 end
 
-# iterating through the hash using while
-# def print_names_less_than_12_characters(students)
-#     while student[:name].length < 12
-#         puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort)"
-#     end
-# end
+def print_names_using_while(students)
+    index = 1
+    while index <= students.length
+        puts "#{index}. #{students[index-1][:name]} (#{students[index-1][:cohort]} cohort)"
+        index += 1
+    end    
+end
 
 def print_footer(students)
     puts "Overall we have #{students.count} great students."
@@ -76,5 +77,6 @@ end
 students = input_students
 # add_hobbies(students)
 print_header
-print(students)
+print_names_using_while(students)
+# print(students)
 print_footer(students)
