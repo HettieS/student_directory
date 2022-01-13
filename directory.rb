@@ -1,3 +1,5 @@
+require 'byebug'
+
 students = [
     {name: "Santa Klaus", cohort: :november}, 
     {name: "Mrs Klaus", cohort: :november},    
@@ -16,7 +18,7 @@ end
 
 def print(students)
     students.each.with_index(1) do |(student), index|
-        puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort), likes #{student[:hobbies]}."
+    puts "#{index}. #{student[:name]} (#{student[:cohort]} cohort), likes #{student[:hobbies]}."
     end
 end
 
@@ -37,9 +39,9 @@ def print_names_less_than_12_characters(students)
 end
 
 def print_names_using_while(students)
-    index = 1
-    while index <= students.length
-        puts "#{index}. #{students[index-1][:name]} (#{students[index-1][:cohort]} cohort)"
+    index = 0
+    while index < students.length
+        puts "#{index+1}. #{students[index][:name]} (#{students[index][:cohort]} cohort)"
         index += 1
     end    
 end
@@ -61,22 +63,20 @@ def input_students
     students
 end
 
-# def add_hobbies(students)
-#     attempt two
-#     students << {hobbies: "tennis"}
-    # attempt one
-    # students.each do |(student), index|
-    #     # student.store("hobbies", "tennis")
-    #     students("hobbies") = "tennis"
-    # end
-#     students.each do |student|
-#         print "#{student[:hobbies]}"
-#     end
-# end
+def add_hobbies(students)
+    students.each do | student |
+        student.store(:hobbies, :tennis)
+    end
+end
+
+# {a.store('e', 67)}
+# take each student that is inputted into the array
+# add a hard coded hobby onto each studentin the array
+
 
 students = input_students
-# add_hobbies(students)
+add_hobbies(students)
 print_header
-print_names_using_while(students)
-# print(students)
+# print_names_using_while(students)
+print(students)
 print_footer(students)
